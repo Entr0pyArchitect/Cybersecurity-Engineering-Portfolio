@@ -1,4 +1,3 @@
-@"
 # Rust build outputs
 /target
 
@@ -55,4 +54,3 @@ id_ed25519
 *.kdbx
 *.sqlite
 *.db
-"@ | Set-Content .\.gitignore
