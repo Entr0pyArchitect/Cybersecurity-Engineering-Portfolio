@@ -1,0 +1,19 @@
+[package]
+name = "fortknox-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.102"
+axum = { version = "0.8.9", features = ["ws"] }
+chrono = { version = "0.4.44", features = ["serde", "clock"] }
+dotenvy = "0.15.7"
+fortknox-protocol = { version = "0.1.0", path = "../../crates/fortknox-protocol" }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.150"
+sqlx = { version = "0.9.0", features = ["runtime-tokio", "tls-rustls-ring-webpki", "postgres", "uuid", "chrono", "migrate"] }
+tokio = { version = "1.52.3", features = ["full"] }
+tower-http = { version = "0.6.11", features = ["trace", "cors"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+uuid = { version = "1.23.1", features = ["serde"] }

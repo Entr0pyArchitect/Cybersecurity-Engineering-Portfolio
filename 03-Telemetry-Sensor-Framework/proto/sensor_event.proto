@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package telemetry;
+
+message SensorEvent {
+  string event_id = 1;
+  string timestamp_utc = 2;
+  string host = 3;
+  string os = 4;
+  string source = 5;
+  string event_type = 6;
+  optional string process_name = 7;
+  optional uint32 pid = 8;
+  optional uint32 parent_pid = 9;
+  optional string username = 10;
+  optional string command_line = 11;
+  optional string path = 12;
+  optional string remote_address = 13;
+  optional string notes = 14;
+  repeated string tags = 15;
+}

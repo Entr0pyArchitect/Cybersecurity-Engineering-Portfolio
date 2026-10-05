@@ -1,0 +1,18 @@
+{
+  "alert_id": "ALERT-2026-0001",
+  "title": "Suspicious Script Interpreter Activity",
+  "source": "Project04-Detection-Engineering-Lab",
+  "severity": "high",
+  "host": "LAB-WIN-01",
+  "user": "LAB\\student",
+  "technique_id": "T1059",
+  "signals": [
+    "process_name=powershell.exe",
+    "parent_process_name=cmd.exe",
+    "command_line_contains=-File"
+  ],
+  "labels": {
+    "scope": "synthetic-lab-alert",
+    "response_mode": "simulation-only"
+  }
+}

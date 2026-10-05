@@ -1,0 +1,58 @@
+openapi: 3.0.3
+info:
+  title: Threat-Informed Defense Platform API
+  version: 0.1.0
+  description: >
+    Lab-safe defensive orchestration API for mapping mock/public threat-intelligence style inputs
+    into ATT&CK-style detection backlog items and telemetry requirements.
+servers:
+  - url: http://localhost:8080
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service is running
+  /api/v1/techniques:
+    get:
+      summary: List starter technique catalogue
+      responses:
+        "200":
+          description: Starter ATT&CK-style technique list
+  /api/v1/ingest:
+    post:
+      summary: Ingest mock TTP input
+      description: Accepts mock or public training data only.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - source_name
+                - techniques
+              properties:
+                source_name:
+                  type: string
+                summary:
+                  type: string
+                techniques:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      confidence:
+                        type: string
+                      notes:
+                        type: string
+      responses:
+        "200":
+          description: Detection backlog generated
+        "400":
+          description: Invalid input

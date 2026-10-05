@@ -1,0 +1,48 @@
+{
+  "documents": [
+    {
+      "path": "knowledge_base\\project04_detection_lab.md",
+      "tokens": [
+        "04",
+        "and",
+        "capture",
+        "detection",
+        "evidence",
+        "explains",
+        "lab",
+        "note",
+        "project",
+        "rules",
+        "sigma",
+        "style",
+        "suricata",
+        "synthetic",
+        "this",
+        "validation"
+      ],
+      "title": "Project 04 Detection Lab"
+    },
+    {
+      "path": "knowledge_base\\project06_response_module.md",
+      "tokens": [
+        "06",
+        "and",
+        "approval",
+        "controls",
+        "explains",
+        "human",
+        "module",
+        "note",
+        "only",
+        "planning",
+        "playbooks",
+        "project",
+        "response",
+        "safety",
+        "simulation",
+        "this"
+      ],
+      "title": "Project 06 Response Module"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "playbook_id": "PB-001",
+    "name": "Script Interpreter Investigation",
+    "description": "Simulation-only response plan for suspicious script interpreter activity in a lab event.",
+    "trigger_technique_ids": ["T1059"],
+    "min_severity": "medium",
+    "actions": [
+      {
+        "action_id": "ACT-001",
+        "name": "Collect process evidence",
+        "description": "Simulate collecting process name, command line, parent process, user, timestamp, and host context.",
+        "mode": "simulation_only",
+        "allowed": true
+      },
+      {
+        "action_id": "ACT-002",
+        "name": "Create investigation ticket",
+        "description": "Simulate opening an analyst review ticket with alert metadata and evidence links.",
+        "mode": "simulation_only",
+        "allowed": true
+      },
+      {
+        "action_id": "ACT-003",
+        "name": "Tag host for review",
+        "description": "Simulate tagging the lab host for follow-up. No isolation or containment is performed in the MVP.",
+        "mode": "simulation_only",
+        "allowed": true
+      }
+    ],
+    "safety_notes": [
+      "This playbook does not isolate hosts.",
+      "This playbook does not kill processes.",
+      "This playbook does not collect credentials.",
+      "This playbook is safe for mock alerts only."
+    ]
+  },
+  {
+    "playbook_id": "PB-002",
+    "name": "Valid Account Activity Review",
+    "description": "Simulation-only response plan for identity-related suspicious activity in a lab event.",
+    "trigger_technique_ids": ["T1078"],
+    "min_severity": "medium",
+    "actions": [
+      {
+        "action_id": "ACT-004",
+        "name": "Collect login context",
+        "description": "Simulate collecting login time, source, user, host, and MFA/context notes.",
+        "mode": "simulation_only",
+        "allowed": true
+      },
+      {
+        "action_id": "ACT-005",
+        "name": "Request human review",
+        "description": "Simulate routing the alert to a human analyst for approval before any account action.",
+        "mode": "simulation_only",
+        "allowed": true
+      }
+    ],
+    "safety_notes": [
+      "No password reset is performed.",
+      "No account disablement is performed.",
+      "Human approval is required for any real identity action."
+    ]
+  }
+]

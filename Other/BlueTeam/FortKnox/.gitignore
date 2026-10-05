@@ -1,0 +1,34 @@
+# Rust
+target/
+
+# Environment
+.env
+.env.local
+
+# Node / Tauri
+node_modules/
+dist/
+build/
+.vite/
+apps/desktop/src-tauri/target/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Secrets / keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.onion
+hostname
+hs_ed25519_secret_key
+hs_ed25519_public_key

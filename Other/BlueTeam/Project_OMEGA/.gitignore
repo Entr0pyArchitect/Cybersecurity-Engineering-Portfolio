@@ -1,0 +1,58 @@
+@"
+# Rust build outputs
+/target
+
+# Project OMEGA encrypted/test artifacts
+*.apv
+*.enc
+*.secret
+*.tmp
+*.log
+*.bak
+*.recovered
+*.recovered.txt
+
+# Local history / generated secret tracking
+.aegisphrase_history
+
+# Test/demo artifacts
+sample.txt
+sample.recovered.txt
+test.apv
+secret.apv
+win11-*.txt
+win11-*.apv
+linux-*.txt
+linux-*.apv
+kali-*.txt
+kali-*.apv
+weak-crack-test*
+omega-crack-test-wordlist.txt
+omega_crack_attempt.sh
+crack-attempt-output.tmp
+wrong-password-output.txt
+tampered-output.txt
+ciphertext-tampered-output.txt
+
+# OS/editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.kdbx
+*.sqlite
+*.db
+"@ | Set-Content .\.gitignore

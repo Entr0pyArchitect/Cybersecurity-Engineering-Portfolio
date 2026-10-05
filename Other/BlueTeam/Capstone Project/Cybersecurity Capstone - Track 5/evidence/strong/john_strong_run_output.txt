@@ -1,0 +1,1 @@
+Loaded 12 password hashes with no different salts (Raw-SHA256 [SHA256 256/256 AVX2 8x])

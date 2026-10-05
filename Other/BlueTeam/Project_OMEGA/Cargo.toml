@@ -1,0 +1,27 @@
+[package]
+name = "aegisphrase"
+version = "0.3.8"
+edition = "2021"
+authors = ["Project OMEGA"]
+description = "Project OMEGA defensive Rust CLI/TUI for high-entropy passphrase generation and encrypted storage."
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+aes-gcm = "0.10"
+aes-gcm-siv = "0.11"
+anyhow = "1"
+arboard = "3"
+argon2 = "0.5"
+base64 = "0.22"
+chacha20poly1305 = "0.10"
+chrono = { version = "0.4", features = ["clock", "serde"] }
+clap = { version = "4.5", features = ["derive"] }
+crossterm = "0.28"
+hex = "0.4"
+rand_chacha = "0.3"
+rand_core = { version = "0.6", features = ["getrandom"] }
+rpassword = "7"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+zeroize = { version = "1.8", features = ["zeroize_derive"] }

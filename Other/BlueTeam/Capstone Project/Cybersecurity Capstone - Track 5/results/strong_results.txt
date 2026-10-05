@@ -1,0 +1,44 @@
+0 password hashes cracked, 12 left
+
+Assignment 3 measured result:
+- Total password entries tested: 12
+- Total password entries recovered: 0 of 12
+- Strong-policy crack rate: 0%
+- Approximate elapsed runtime: 0.39 seconds
+- Comparison to baseline: The weak-policy baseline produced a 100% crack rate, while the strong-policy dataset produced a 0% crack rate under the same controlled offline workflow and weak wordlist.
+
+
+
+python3 scripts/generate_strong_data.py
+
+python3 - <<'PY'
+from pathlib import Path
+import hashlib
+
+pw_file = Path("data/strong_passwords.txt")
+hash_file = Path("data/strong_hashes.txt")
+
+passwords = [line.strip() for line in pw_file.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+with hash_file.open("w", encoding="utf-8") as f:
+    for pw in passwords:
+        f.write(hashlib.sha256(pw.encode()).hexdigest() + "\n")
+
+print(f"[+] Wrote {len(passwords)} SHA-256 hashes to {hash_file}")
+PY
+
+rm -f ~/.john/john.pot
+
+john --format=raw-sha256 --wordlist=data/weak_passwords.txt data/strong_hashes.txt | tee evidence/strong/john_strong_run_output.txt
+
+john --show --format=raw-sha256 data/strong_hashes.txt | tee results/strong_results.txt
+
+
+
+For Assignment 3, I implemented the first improvement step in my Track 5 capstone by replacing the weak password dataset with a stronger password-policy dataset. The new dataset used longer, more complex, and less predictable passwords while keeping the testing workflow controlled and offline.
+
+To preserve a fair comparison, I used the same hash format and the same John the Ripper cracking process from the baseline test. I also used the weak baseline wordlist against the stronger hashes so that the comparison focused on password policy strength rather than a completely different attack setup.
+
+The baseline weak-policy condition from Assignment 2 resulted in 12 out of 12 passwords being cracked, producing a 100% crack rate. In contrast, the stronger password-policy dataset resulted in 0 out of 12 passwords being cracked, producing a 0% crack rate under the same controlled workflow.
+
+These results demonstrate measurable improvement. The stronger password policy significantly increased resistance to offline cracking attempts and supports the core project goal of showing why password policy design matters from a defensive security perspective.

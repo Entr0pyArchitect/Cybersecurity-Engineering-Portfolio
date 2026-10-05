@@ -1,0 +1,1 @@
+alert http any any -> any any (msg:"LAB Possible Executable Download Over HTTP"; flow:established,to_server; http.uri; content:".exe"; nocase; classtype:policy-violation; sid:4000001; rev:1;)

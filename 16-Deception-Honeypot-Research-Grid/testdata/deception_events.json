@@ -1,0 +1,20 @@
+[
+  {
+    "event_id": "DEC-001",
+    "asset": "decoy-ssh-01",
+    "event_type": "connection_attempt",
+    "expected": "decoy_touched"
+  },
+  {
+    "event_id": "DEC-002",
+    "asset": "production-docs",
+    "event_type": "page_view",
+    "expected": "none"
+  },
+  {
+    "event_id": "DEC-003",
+    "asset": "fake-admin-share",
+    "event_type": "access_attempt",
+    "expected": "decoy_touched"
+  }
+]

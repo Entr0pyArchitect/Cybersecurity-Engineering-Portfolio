@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.john/
+*.pot
+evidence/env-proof/project_tree.txt

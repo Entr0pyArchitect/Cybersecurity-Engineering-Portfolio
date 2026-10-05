@@ -1,0 +1,28 @@
+[
+  {
+    "event_id": "WIN-PROC-001",
+    "timestamp_utc": "2026-05-14T00:00:00Z",
+    "host": "LAB-WIN-01",
+    "source": "mock_windows_process_log",
+    "event_type": "process_creation",
+    "process_name": "powershell.exe",
+    "parent_process_name": "cmd.exe",
+    "command_line": "powershell.exe -NoProfile -File C:\\Lab\\maintenance.ps1",
+    "username": "LAB\\student",
+    "expected_detection": "script_interpreter_activity",
+    "notes": "Synthetic event for validating script interpreter detection logic. Not collected from a real target."
+  },
+  {
+    "event_id": "WIN-PROC-002",
+    "timestamp_utc": "2026-05-14T00:05:00Z",
+    "host": "LAB-WIN-01",
+    "source": "mock_windows_process_log",
+    "event_type": "process_creation",
+    "process_name": "notepad.exe",
+    "parent_process_name": "explorer.exe",
+    "command_line": "notepad.exe C:\\Lab\\notes.txt",
+    "username": "LAB\\student",
+    "expected_detection": "none",
+    "notes": "Benign synthetic event used to check false-positive behavior."
+  }
+]

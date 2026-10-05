@@ -1,0 +1,1 @@
+python -m agent_core.cli .\test-scenarios\safe_lab_request.json

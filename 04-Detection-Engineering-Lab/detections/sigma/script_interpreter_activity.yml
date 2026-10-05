@@ -1,0 +1,28 @@
+title: Lab Script Interpreter Activity
+id: 00000000-0000-0000-0000-000000000401
+status: experimental
+description: Lab-safe Sigma-style detection for script interpreter process activity in synthetic process logs.
+author: Entr0pyArchitect
+date: 2026/05/14
+references:
+  - https://attack.mitre.org/techniques/T1059/
+tags:
+  - attack.execution
+  - attack.t1059
+logsource:
+  category: process_creation
+detection:
+  selection:
+    process_name:
+      - powershell.exe
+      - cmd.exe
+      - wscript.exe
+      - cscript.exe
+      - bash.exe
+      - python.exe
+  condition: selection
+falsepositives:
+  - Administrative scripts
+  - Developer automation
+  - Login scripts
+level: low

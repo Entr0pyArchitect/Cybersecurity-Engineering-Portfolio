@@ -1,0 +1,25 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Evidence/results that may include local paths
+evidence/screenshots/*
+evidence/terminal_output/*
+evidence/test_logs/*
+reports/generated/*
+
+# Keep structure
+!evidence/screenshots/.gitkeep
+!evidence/terminal_output/.gitkeep
+!evidence/test_logs/.gitkeep
+!reports/generated/.gitkeep
+
+# Local backups
+.backup/

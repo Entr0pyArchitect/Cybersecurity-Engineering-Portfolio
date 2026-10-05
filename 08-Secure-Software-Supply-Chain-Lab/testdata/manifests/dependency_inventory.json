@@ -1,0 +1,41 @@
+[
+  {
+    "component": "trusted-json-parser",
+    "ecosystem": "python",
+    "version": "1.2.3",
+    "version_pinned": true,
+    "license": "MIT",
+    "license_documented": true,
+    "source": "pypi",
+    "source_trusted": true,
+    "integrity_hash_recorded": true,
+    "known_high_risk_finding": false,
+    "notes": "Synthetic good component for validation."
+  },
+  {
+    "component": "trusted-http-client",
+    "ecosystem": "go",
+    "version": "0.9.1",
+    "version_pinned": true,
+    "license": "Apache-2.0",
+    "license_documented": true,
+    "source": "proxy.golang.org",
+    "source_trusted": true,
+    "integrity_hash_recorded": true,
+    "known_high_risk_finding": false,
+    "notes": "Synthetic good component for validation."
+  },
+  {
+    "component": "intentionally-incomplete-demo-dependency",
+    "ecosystem": "npm",
+    "version": "latest",
+    "version_pinned": false,
+    "license": "",
+    "license_documented": false,
+    "source": "unknown",
+    "source_trusted": false,
+    "integrity_hash_recorded": false,
+    "known_high_risk_finding": true,
+    "notes": "Expected to fail validation. Used to prove the checker catches weak dependency posture."
+  }
+]

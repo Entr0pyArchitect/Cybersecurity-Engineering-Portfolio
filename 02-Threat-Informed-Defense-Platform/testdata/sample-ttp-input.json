@@ -1,0 +1,18 @@
+{
+  "source_name": "Mock Training Report",
+  "summary": "Lab-safe example input based on generic adversary behavior. This is not real threat intelligence and does not target any organization.",
+  "techniques": [
+    {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "confidence": "medium",
+      "notes": "Mock execution behavior for detection planning."
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "confidence": "low",
+      "notes": "Mock identity-related behavior for backlog mapping."
+    }
+  ]
+}

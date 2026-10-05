@@ -1,0 +1,22 @@
+# Rust
+target/
+
+# Keep Cargo.lock for application/workspace reproducibility
+# Do not ignore Cargo.lock in this portfolio project.
+
+# Local env
+.env
+.env.local
+
+# Evidence files that may contain local paths
+evidence/screenshots/*
+evidence/terminal_output/*
+evidence/test_logs/*
+
+# Keep folders
+!evidence/screenshots/.gitkeep
+!evidence/terminal_output/.gitkeep
+!evidence/test_logs/.gitkeep
+
+# Local backups
+.backup/

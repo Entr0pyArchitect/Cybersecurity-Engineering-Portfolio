@@ -1,0 +1,22 @@
+# Environment
+.env
+.env.local
+
+# Go
+bin/
+*.exe
+*.test
+coverage.out
+
+# Evidence files that may contain local machine paths or screenshots
+evidence/screenshots/*
+evidence/terminal_output/*
+evidence/test_logs/*
+
+# Keep evidence folders
+!evidence/screenshots/.gitkeep
+!evidence/terminal_output/.gitkeep
+!evidence/test_logs/.gitkeep
+
+# Local backups
+.backup/

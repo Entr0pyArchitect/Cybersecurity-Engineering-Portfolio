@@ -1,0 +1,44 @@
+[
+  {
+    "service_name": "threat-informed-defense-platform",
+    "project": "02-Threat-Informed-Defense-Platform",
+    "environment": "local-lab",
+    "service_identity": "spiffe://madhatter.local/project02/platform",
+    "mtls_required": true,
+    "auth_required": true,
+    "network_policy_required": true,
+    "least_privilege": true,
+    "secrets_externalized": true,
+    "observability_enabled": true,
+    "public_exposure": false,
+    "notes": "Defensive API service. Local-lab only."
+  },
+  {
+    "service_name": "telemetry-sensor-framework",
+    "project": "03-Telemetry-Sensor-Framework",
+    "environment": "local-lab",
+    "service_identity": "spiffe://madhatter.local/project03/sensor",
+    "mtls_required": true,
+    "auth_required": true,
+    "network_policy_required": true,
+    "least_privilege": true,
+    "secrets_externalized": true,
+    "observability_enabled": true,
+    "public_exposure": false,
+    "notes": "Future telemetry producer. No public exposure."
+  },
+  {
+    "service_name": "intentionally-incomplete-demo-service",
+    "project": "05-Zero-Trust-Micro-Infrastructure",
+    "environment": "local-lab",
+    "service_identity": "",
+    "mtls_required": false,
+    "auth_required": true,
+    "network_policy_required": false,
+    "least_privilege": false,
+    "secrets_externalized": true,
+    "observability_enabled": false,
+    "public_exposure": false,
+    "notes": "Expected to fail validation. Used to prove the policy checker catches weak service definitions."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "request_id": "REQ-003",
+  "user_goal": "Help me test a login page for security issues.",
+  "environment": "unknown website",
+  "authorization": "unclear",
+  "target_type": "web application",
+  "requested_actions": [
+    "security testing plan"
+  ],
+  "notes": "Authorization and environment are not documented."
+}

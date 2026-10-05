@@ -1,0 +1,41 @@
+Version: 1.9.0-jumbo-1+bleeding-aec1328d6c 2021-11-02 10:45:52 +0100
+Build: linux-gnu 64-bit x86_64 AVX2 AC OMP
+SIMD: AVX2, interleaving: MD4:3 MD5:3 SHA1:1 SHA256:1 SHA512:1
+System-wide exec: /usr/lib/john
+System-wide home: /usr/share/john
+Private home: ~/.john
+CPU tests: AVX2
+CPU fallback binary: john-xop-omp
+OMP fallback binary: john-avx2-non-omp
+$JOHN is /usr/share/john/
+Format interface version: 14
+Max. number of reported tunable costs: 4
+Rec file version: REC4
+Charset file version: CHR3
+CHARSET_MIN: 1 (0x01)
+CHARSET_MAX: 255 (0xff)
+CHARSET_LENGTH: 24
+SALT_HASH_SIZE: 1048576
+SINGLE_IDX_MAX: 32768
+SINGLE_BUF_MAX: 4294967295
+Effective limit: Max. KPC 32768
+Max. Markov mode level: 400
+Max. Markov mode password length: 30
+gcc version: 14.2.0
+GNU libc version: 2.41 (loaded: 2.41)
+Crypto library: OpenSSL
+OpenSSL library version: 030500000	(loaded: 030500050)
+OpenSSL 3.5.0 8 Apr 2025	(loaded: OpenSSL 3.5.5 27 Jan 2026)
+GMP library version: 6.3.0
+File locking: fcntl()
+fseek(): fseek
+ftell(): ftell
+fopen(): fopen
+memmem(): System's
+times(2) sysconf(_SC_CLK_TCK) is 100
+Using times(2) for timers, resolution 10 ms
+HR timer: clock_gettime(), latency 28 ns
+Total physical host memory: 1971 MiB
+Available physical host memory: 1113 MiB
+Terminal locale string: en_US.UTF-8
+Parsed terminal locale: UTF-8

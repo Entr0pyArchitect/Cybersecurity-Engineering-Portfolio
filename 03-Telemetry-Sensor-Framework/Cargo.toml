@@ -1,0 +1,20 @@
+[workspace]
+members = [
+    "sensor-core",
+    "windows-agent",
+    "linux-agent"
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Entr0pyArchitect"]
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.0", features = ["v4", "serde"] }

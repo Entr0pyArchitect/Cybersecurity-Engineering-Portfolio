@@ -1,0 +1,26 @@
+title: Candidate Detection for Command and Scripting Interpreter
+id: 00000000-0000-0000-0000-000000000259
+status: experimental
+description: Lab-safe starter detection idea for command and scripting interpreter behavior.
+references:
+  - https://attack.mitre.org/techniques/T1059/
+author: Entr0pyArchitect
+date: 2026/05/14
+tags:
+  - attack.execution
+  - attack.t1059
+logsource:
+  category: process_creation
+detection:
+  selection:
+    CommandLine|contains:
+      - "powershell"
+      - "cmd.exe"
+      - "bash"
+      - "python"
+  condition: selection
+falsepositives:
+  - Administrative scripts
+  - Developer activity
+  - Automation jobs
+level: low

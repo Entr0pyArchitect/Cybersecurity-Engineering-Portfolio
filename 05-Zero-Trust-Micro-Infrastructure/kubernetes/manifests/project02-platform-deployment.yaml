@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: threat-informed-defense-platform
+  labels:
+    app: threat-informed-defense-platform
+    project: "02"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: threat-informed-defense-platform
+  template:
+    metadata:
+      labels:
+        app: threat-informed-defense-platform
+        project: "02"
+    spec:
+      containers:
+        - name: platform
+          image: threat-informed-defense-platform:local
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: LAB_SCOPE
+              value: "mock-data-only"

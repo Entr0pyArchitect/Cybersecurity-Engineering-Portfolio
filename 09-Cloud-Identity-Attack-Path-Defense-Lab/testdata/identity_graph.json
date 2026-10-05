@@ -1,0 +1,54 @@
+{
+  "identities": [
+    {
+      "id": "user-analyst",
+      "type": "user",
+      "mfa": true,
+      "admin": false,
+      "external": false,
+      "permissions": [
+        "read_logs"
+      ],
+      "trusted": true
+    },
+    {
+      "id": "svc-telemetry",
+      "type": "service_account",
+      "mfa": null,
+      "admin": false,
+      "external": false,
+      "permissions": [
+        "write_telemetry"
+      ],
+      "trusted": true
+    },
+    {
+      "id": "external-admin-demo",
+      "type": "user",
+      "mfa": false,
+      "admin": true,
+      "external": true,
+      "permissions": [
+        "admin"
+      ],
+      "trusted": false
+    },
+    {
+      "id": "overprivileged-ci-demo",
+      "type": "service_account",
+      "mfa": null,
+      "admin": true,
+      "external": false,
+      "permissions": [
+        "admin",
+        "deploy",
+        "read_secrets"
+      ],
+      "trusted": true
+    }
+  ],
+  "expected_findings": [
+    "external_admin_without_mfa",
+    "overprivileged_service_account"
+  ]
+}

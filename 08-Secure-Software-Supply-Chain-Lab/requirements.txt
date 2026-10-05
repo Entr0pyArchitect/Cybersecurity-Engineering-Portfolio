@@ -1,0 +1,3 @@
+# MVP uses Python standard library only.
+# Future tools to research manually:
+# gitleaks, syft, grype, osv-scanner, trivy, OpenSSF Scorecard

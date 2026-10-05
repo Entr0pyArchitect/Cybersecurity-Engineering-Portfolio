@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-placeholder
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+# Placeholder only. Do not apply blindly.
+# Future work: define explicit service-to-service allow rules in a local lab.

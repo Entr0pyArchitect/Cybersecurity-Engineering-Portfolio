@@ -1,0 +1,151 @@
+name: Portfolio CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Commit whitespace check
+        run: git show --check --oneline --no-renames HEAD
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Public repository audit
+        run: python3 Shared/scripts/audit_public_repo.py
+
+  go:
+    name: Go validation — ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - 02-Threat-Informed-Defense-Platform
+          - 06-Autonomous-Response-Module
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: ${{ matrix.project }}/go.mod
+      - name: Test
+        working-directory: ${{ matrix.project }}
+        run: go test ./...
+
+  telemetry-rust:
+    name: Project 03 Rust tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Cargo test
+        working-directory: 03-Telemetry-Sensor-Framework
+        run: cargo test --workspace
+
+  ai-agent:
+    name: Project 07 Python tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        working-directory: 07-AI-Ethical-Hacking-Agent
+        run: python3 -m unittest discover -s tests
+
+  python-validators:
+    name: Python validation — ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - project: 04-Detection-Engineering-Lab
+            command: python3 pipelines/validate_detections.py
+          - project: 05-Zero-Trust-Micro-Infrastructure
+            command: python3 pipelines/validate_zero_trust.py
+          - project: 08-Secure-Software-Supply-Chain-Lab
+            command: python3 pipelines/validate_supply_chain.py
+          - project: 09-Cloud-Identity-Attack-Path-Defense-Lab
+            command: python3 pipelines/validate_cloud_identity.py
+          - project: 10-Malware-Analysis-Reverse-Engineering-Workbench
+            command: python3 pipelines/validate_static_triage.py
+          - project: 11-Active-Directory-Purple-Team-Range
+            command: python3 pipelines/validate_ad_detections.py
+          - project: 12-Threat-Intelligence-Fusion-ATTACK-Navigator
+            command: python3 pipelines/fuse_intel.py
+          - project: 13-Vulnerability-Research-Fuzzing-Lab
+            command: python3 pipelines/run_fuzz_validation.py
+          - project: 14-DFIR-Evidence-Automation-Toolkit
+            command: python3 pipelines/validate_evidence_manifest.py
+          - project: 15-SIEM-Engineering-Query-Library
+            command: python3 pipelines/validate_query_library.py
+          - project: 16-Deception-Honeypot-Research-Grid
+            command: python3 pipelines/validate_deception_events.py
+          - project: 17-AI-Enhanced-SOC-Copilot-RAG-Knowledge-Base
+            command: python3 pipelines/validate_rag_index.py
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Validate
+        working-directory: ${{ matrix.project }}
+        run: ${{ matrix.command }}
+
+  applied-blue:
+    name: Applied Blue Team — ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - project: Other/BlueTeam/FortKnox
+            command: cargo check --workspace
+          - project: Other/BlueTeam/Project_OMEGA
+            command: cargo check
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Rust validation
+        working-directory: ${{ matrix.project }}
+        run: ${{ matrix.command }}
+
+  capstone-syntax:
+    name: Capstone syntax validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Python and shell syntax
+        working-directory: Other/BlueTeam/Capstone Project/Cybersecurity Capstone - Track 5
+        shell: bash
+        run: |
+          python3 -m py_compile scripts/*.py
+          for f in scripts/*.sh; do
+            bash -n "$f"
+          done
+
+  omega-shell:
+    name: Project OMEGA shell syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Shell syntax
+        working-directory: Other/BlueTeam/Project_OMEGA
+        shell: bash
+        run: |
+          for f in Linux/scripts/*.sh; do
+            bash -n "$f"
+          done

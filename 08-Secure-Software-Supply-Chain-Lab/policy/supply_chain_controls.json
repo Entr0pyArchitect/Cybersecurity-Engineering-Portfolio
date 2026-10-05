@@ -1,0 +1,11 @@
+{
+  "project": "08-Secure-Software-Supply-Chain-Lab",
+  "scope": "local synthetic validation only",
+  "required_controls": [
+    {"id":"SSC-001","name":"Dependency version pinned","field":"version_pinned","expected":true,"why":"Pinned versions improve reproducibility and reduce unexpected dependency drift."},
+    {"id":"SSC-002","name":"License documented","field":"license_documented","expected":true,"why":"License visibility helps avoid legal and compliance surprises."},
+    {"id":"SSC-003","name":"Package source trusted","field":"source_trusted","expected":true,"why":"Dependencies should come from expected registries or controlled internal sources."},
+    {"id":"SSC-004","name":"Integrity hash recorded","field":"integrity_hash_recorded","expected":true,"why":"Hashes support artifact integrity verification and tamper detection."},
+    {"id":"SSC-005","name":"No known high-risk finding","field":"known_high_risk_finding","expected":false,"why":"High-risk findings must be reviewed before release."}
+  ]
+}

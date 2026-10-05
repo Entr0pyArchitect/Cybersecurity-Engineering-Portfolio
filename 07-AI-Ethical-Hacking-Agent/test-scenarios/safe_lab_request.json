@@ -1,0 +1,13 @@
+{
+  "request_id": "REQ-001",
+  "user_goal": "Create a defensive checklist for validating a Sigma rule in my owned local lab.",
+  "environment": "owned lab local-only synthetic events",
+  "authorization": "owned lab",
+  "target_type": "mock data",
+  "requested_actions": [
+    "explain concept",
+    "create checklist",
+    "map to detection engineering project"
+  ],
+  "notes": "Only mock lab data and synthetic events are used. No exploitation. Documentation and validation only."
+}

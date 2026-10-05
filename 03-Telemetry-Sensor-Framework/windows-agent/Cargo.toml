@@ -1,0 +1,11 @@
+[package]
+name = "windows-agent"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde_json.workspace = true
+sensor-core = { path = "../sensor-core" }

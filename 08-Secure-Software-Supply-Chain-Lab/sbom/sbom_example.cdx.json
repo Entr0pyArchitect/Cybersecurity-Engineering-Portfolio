@@ -1,0 +1,16 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "MadHatter Project 08 Synthetic Supply Chain Lab",
+      "version": "0.1.0"
+    }
+  },
+  "components": [
+    {"type":"library","name":"trusted-json-parser","version":"1.2.3","licenses":[{"license":{"id":"MIT"}}]},
+    {"type":"library","name":"trusted-http-client","version":"0.9.1","licenses":[{"license":{"id":"Apache-2.0"}}]}
+  ]
+}

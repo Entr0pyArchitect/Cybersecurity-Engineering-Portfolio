@@ -1,0 +1,62 @@
+{
+  "project": "05-Zero-Trust-Micro-Infrastructure",
+  "scope": "local-lab policy validation only",
+  "required_controls": [
+    {
+      "id": "ZT-001",
+      "name": "Service identity required",
+      "field": "service_identity",
+      "expected": "non_empty",
+      "why": "Every service must have an identity before trust can be evaluated."
+    },
+    {
+      "id": "ZT-002",
+      "name": "mTLS required",
+      "field": "mtls_required",
+      "expected": true,
+      "why": "Service-to-service communication should be encrypted and identity-aware."
+    },
+    {
+      "id": "ZT-003",
+      "name": "Authentication required",
+      "field": "auth_required",
+      "expected": true,
+      "why": "No service should assume internal network trust."
+    },
+    {
+      "id": "ZT-004",
+      "name": "Network policy required",
+      "field": "network_policy_required",
+      "expected": true,
+      "why": "East-west traffic should be explicitly constrained."
+    },
+    {
+      "id": "ZT-005",
+      "name": "Least privilege required",
+      "field": "least_privilege",
+      "expected": true,
+      "why": "Services should only have the access needed for their documented purpose."
+    },
+    {
+      "id": "ZT-006",
+      "name": "Secrets externalized",
+      "field": "secrets_externalized",
+      "expected": true,
+      "why": "Secrets must not be hardcoded in application or infrastructure files."
+    },
+    {
+      "id": "ZT-007",
+      "name": "Observability enabled",
+      "field": "observability_enabled",
+      "expected": true,
+      "why": "A security system must be measurable and auditable."
+    },
+    {
+      "id": "ZT-008",
+      "name": "No public exposure by default",
+      "field": "public_exposure",
+      "expected": false,
+      "why": "The MVP lab should remain private and local unless exposure is explicitly justified."
+    }
+  ]
+}

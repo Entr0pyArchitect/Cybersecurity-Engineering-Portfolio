@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SensorEvent",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp_utc",
+    "host",
+    "os",
+    "source",
+    "event_type",
+    "tags"
+  ],
+  "properties": {
+    "event_id": { "type": "string" },
+    "timestamp_utc": { "type": "string" },
+    "host": { "type": "string" },
+    "os": { "type": "string" },
+    "source": { "type": "string" },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "process_snapshot",
+        "file_observation",
+        "network_observation",
+        "system_observation"
+      ]
+    },
+    "process_name": { "type": ["string", "null"] },
+    "pid": { "type": ["integer", "null"] },
+    "parent_pid": { "type": ["integer", "null"] },
+    "username": { "type": ["string", "null"] },
+    "command_line": { "type": ["string", "null"] },
+    "path": { "type": ["string", "null"] },
+    "remote_address": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

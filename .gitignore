@@ -1,0 +1,141 @@
+# ============================================================
+# Cybersecurity Engineering Portfolio
+# Root ignore policy
+# ============================================================
+
+# ----------------------------
+# Secrets / environment
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.pfx
+*.p12
+
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# ----------------------------
+# Rust
+# ----------------------------
+target/
+
+# ----------------------------
+# Go
+# ----------------------------
+bin/
+*.test
+coverage.out
+
+# ----------------------------
+# Node / JavaScript
+# ----------------------------
+node_modules/
+dist/
+coverage/
+.npm/
+
+# ----------------------------
+# Terraform
+# ----------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# ----------------------------
+# Editors / IDE
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------------
+# OS metadata
+# ----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------
+# Local backups / cache
+# ----------------------------
+.backup/
+.cache/
+*.tmp
+*.temp
+*.bak
+*~
+
+# ----------------------------
+# Logs
+# ----------------------------
+*.log
+
+# ----------------------------
+# Public/private portfolio boundary
+# ----------------------------
+# Project 18 remains local-only until a deliberate public-release review.
+18-Exploitation-Toolkit/
+
+# Detailed Project MadHatter manuals remain local-only.
+ProjectMadHatter/Documentation/*.odt
+
+# ----------------------------
+# Other/RedTeam public documentation policy
+# ----------------------------
+# Only reviewed README documentation is public by default. Future offensive code,
+# payloads, samples, archives, and lab artifacts require a deliberate review
+# before these rules are relaxed.
+Other/RedTeam/Offensive Projects/*
+!Other/RedTeam/Offensive Projects/README.md
+Other/RedTeam/Offensive Tooling/*
+!Other/RedTeam/Offensive Tooling/README.md
+
+# ----------------------------
+# Capstone OPSEC / academic artifacts
+# ----------------------------
+# Keep identity-bearing academic binaries and raw media local until sanitized.
+Other/BlueTeam/Capstone Project/Cybersecurity Capstone - Track 5/docs/*.pdf
+Other/BlueTeam/Capstone Project/Cybersecurity Capstone - Track 5/docs/*.pptx
+Other/BlueTeam/Capstone Project/Cybersecurity Capstone - Track 5/evidence/videos/
+Other/BlueTeam/Capstone Project/Cybersecurity Capstone - Track 5/evidence/screenshots/
+
+# ----------------------------
+# Additional OPSEC-sensitive material
+# ----------------------------
+*.tfvars
+*.tfvars.json
+
+id_rsa
+id_ed25519
+id_ecdsa
+
+*.pcap
+*.pcapng
+*.evtx
+*.dmp
+*.mem
+*.raw
+*.E01
+*.e01
+
+.aws/
+.kube/
+kubeconfig*
+
+.~lock.*#

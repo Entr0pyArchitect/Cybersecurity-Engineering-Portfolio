@@ -1,0 +1,16 @@
+{
+  "alert_id": "ALERT-2026-0002",
+  "title": "Unknown Low Severity Lab Event",
+  "source": "Project04-Detection-Engineering-Lab",
+  "severity": "low",
+  "host": "LAB-WIN-01",
+  "user": "LAB\\student",
+  "technique_id": "T9999",
+  "signals": [
+    "unknown=test"
+  ],
+  "labels": {
+    "scope": "synthetic-lab-alert",
+    "response_mode": "simulation-only"
+  }
+}

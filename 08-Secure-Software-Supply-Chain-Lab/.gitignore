@@ -1,0 +1,16 @@
+.env
+.env.local
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+evidence/screenshots/*
+evidence/terminal_output/*
+evidence/test_logs/*
+scan-results/*
+!evidence/screenshots/.gitkeep
+!evidence/terminal_output/.gitkeep
+!evidence/test_logs/.gitkeep
+!scan-results/.gitkeep
+.backup/

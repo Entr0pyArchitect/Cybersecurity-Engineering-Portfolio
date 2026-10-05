@@ -1,0 +1,26 @@
+# deny.toml - Supply Chain Security Config
+
+[advisories]
+# Warn us if a direct workspace dependency has been abandoned by its author
+unmaintained = "workspace"
+# Warn us if a specific version was yanked from crates.io
+yanked = "warn"
+ignore = []
+
+[licenses]
+# Allow only explicitly approved licenses
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Zlib",
+    "Unicode-3.0"
+]
+
+[bans]
+# Warn if our dependencies pull in two different versions of the same crate
+multiple-versions = "warn"
+wildcards = "allow"
+highlight = "all"

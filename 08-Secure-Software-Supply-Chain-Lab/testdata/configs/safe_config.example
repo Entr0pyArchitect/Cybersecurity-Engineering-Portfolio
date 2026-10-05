@@ -1,0 +1,4 @@
+APP_ENV=development
+API_KEY=REPLACE_ME
+TOKEN=EXAMPLE_ONLY
+PASSWORD=not-a-real-secret

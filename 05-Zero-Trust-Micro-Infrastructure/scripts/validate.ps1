@@ -1,0 +1,1 @@
+python .\pipelines\validate_zero_trust.py

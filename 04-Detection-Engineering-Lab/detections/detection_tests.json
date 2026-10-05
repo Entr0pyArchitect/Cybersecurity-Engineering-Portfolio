@@ -1,0 +1,20 @@
+[
+  {
+    "id": "script_interpreter_activity",
+    "description": "Detect synthetic process events where the process name is a common script interpreter.",
+    "dataset": "testdata/windows/process_events.json",
+    "field": "process_name",
+    "match_any": ["powershell.exe", "cmd.exe", "wscript.exe", "cscript.exe", "bash.exe", "python.exe"],
+    "expected_matching_event_ids": ["WIN-PROC-001"],
+    "expected_non_matching_event_ids": ["WIN-PROC-002"]
+  },
+  {
+    "id": "http_executable_download",
+    "description": "Detect synthetic HTTP events where the URI contains an executable file extension.",
+    "dataset": "testdata/network/http_events.json",
+    "field": "uri",
+    "match_any": [".exe"],
+    "expected_matching_event_ids": ["NET-HTTP-001"],
+    "expected_non_matching_event_ids": ["NET-HTTP-002"]
+  }
+]

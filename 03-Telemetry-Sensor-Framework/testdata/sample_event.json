@@ -1,0 +1,17 @@
+{
+  "event_id": "00000000-0000-0000-0000-000000000003",
+  "timestamp_utc": "2026-05-14T00:00:00Z",
+  "host": "lab-host",
+  "os": "windows",
+  "source": "sample",
+  "event_type": "process_snapshot",
+  "process_name": "example.exe",
+  "pid": 1234,
+  "parent_pid": null,
+  "username": "lab-user",
+  "command_line": "example.exe --demo",
+  "path": "C:\\Lab\\example.exe",
+  "remote_address": null,
+  "notes": "Static sample event for schema and parser testing.",
+  "tags": ["sample", "lab_safe"]
+}

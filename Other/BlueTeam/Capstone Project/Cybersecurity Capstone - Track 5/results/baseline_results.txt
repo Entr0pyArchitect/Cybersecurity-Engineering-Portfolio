@@ -1,0 +1,30 @@
+?:guest123
+?:welcome1
+?:monkey
+?:iloveyou
+?:spring2026
+?:password
+?:guest123
+?:football
+?:welcome
+?:admin123
+?:summer2025
+?:admin123
+
+12 password hashes cracked, 0 left
+
+Assignment 2 baseline summary:
+- Environment: Kali Linux VirtualBox VM
+- Tool used: John the Ripper
+- Hash format: raw-sha256
+- Dataset type: synthetic weak-password dataset
+- Baseline objective: validate MVP workflow and collect first crack-rate evidence
+- Notes: This baseline confirms the environment and toolchain are working as intended.
+
+Assignment 2 measured baseline result:
+- Total password entries tested: 12
+- Unique hashes loaded by John: 10
+- Total password entries recovered: 12 of 12
+- Baseline crack rate: 100%
+- Approximate elapsed runtime: 0.12 seconds
+- Interpretation: The weak password dataset was fully recoverable under controlled offline conditions, demonstrating high vulnerability and establishing a measurable baseline for comparison against a stronger password policy condition.

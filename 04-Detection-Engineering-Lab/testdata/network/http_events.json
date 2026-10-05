@@ -1,0 +1,28 @@
+[
+  {
+    "event_id": "NET-HTTP-001",
+    "timestamp_utc": "2026-05-14T00:10:00Z",
+    "src_ip": "10.10.10.25",
+    "dest_ip": "10.10.10.50",
+    "dest_port": 80,
+    "protocol": "http",
+    "http_method": "GET",
+    "uri": "/lab/download/example-tool.exe",
+    "user_agent": "LabValidationClient/1.0",
+    "expected_detection": "http_executable_download",
+    "notes": "Synthetic HTTP event for validating a lab-only executable download detection."
+  },
+  {
+    "event_id": "NET-HTTP-002",
+    "timestamp_utc": "2026-05-14T00:15:00Z",
+    "src_ip": "10.10.10.25",
+    "dest_ip": "10.10.10.50",
+    "dest_port": 80,
+    "protocol": "http",
+    "http_method": "GET",
+    "uri": "/lab/index.html",
+    "user_agent": "LabValidationClient/1.0",
+    "expected_detection": "none",
+    "notes": "Benign synthetic HTTP event used to check false-positive behavior."
+  }
+]

@@ -1,0 +1,1 @@
+python -m agent_core.cli .\test-scenarios\unsafe_request.json
